@@ -15,14 +15,13 @@ const ProfileScreen = () => {
             .then((newUser) => {
             setConnectedUser(newUser);
             })
-    }
-    
-    
+    }    
     
     return (
         <View style={styles.container}>
             <Text style={styles.hello} >Bonjour, {connectedUser} </Text>
-            <TouchableOpacity style={styles.buttonStyle} onPress={loadProfile}   >
+            {/* activeOpacity va permet baisser l'opacité */}
+            <TouchableOpacity style={styles.buttonStyle} onPress={loadProfile}  activeOpacity={0.5}  >
                 <Text style={styles.buttonText} >Charger le profil de test</Text>
             </TouchableOpacity>   
         </View>
