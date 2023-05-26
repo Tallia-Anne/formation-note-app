@@ -1,29 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { initProfileName, getProfileName } from '../shared/functions/AsyncFunction';
+import { initProfileName, getProfileName } from '../shared/functions/AsyncFunctions';
 
 const ProfileScreen = () => {
     const [connectedUser, setConnectedUser] = useState('Invité');
-    
+
     useEffect(() => {
         initProfileName();
     }, []);
-    
-    
-    const loadProfile =() => {
+
+
+    const loadProfile = () => {
         getProfileName()
             .then((newUser) => {
-            setConnectedUser(newUser);
+                setConnectedUser(newUser);
             })
-    }    
-    
+    }
+
     return (
         <View style={styles.container}>
             <Text style={styles.hello} >Bonjour, {connectedUser} </Text>
             {/* activeOpacity va permet baisser l'opacité */}
-            <TouchableOpacity style={styles.buttonStyle} onPress={loadProfile}  activeOpacity={0.5}  >
+            <TouchableOpacity style={styles.buttonStyle} onPress={loadProfile} activeOpacity={0.5}  >
                 <Text style={styles.buttonText} >Charger le profil de test</Text>
-            </TouchableOpacity>   
+            </TouchableOpacity>
         </View>
     );
 }
