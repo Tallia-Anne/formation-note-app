@@ -34,11 +34,13 @@ export default function App() {
   
   
   return (
+    
+    
     <NavigationContainer>
       <NoteProvider>
         <NavigationTabs
           // passer l'état de l'username et (?) on verifier de l'etat s'il bien passer de username 
-          username={userName?.name}
+          userName={userName?.name}
           modifyGlobalUsername={modifyGlobalUsername}
         />
         

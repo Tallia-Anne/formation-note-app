@@ -8,6 +8,7 @@ import { getUsername } from '../shared/functions/AsyncFunctions';
 // Importation des écrans
 import HomeScreen from '../screens/HomeScreen';
 import NoteListScreen from '../screens/NoteListScreen';
+import  NoteScreen  from '../screens/NoteScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -120,8 +121,33 @@ const NavigationTabs = ({ userName, modifyGlobalUsername }) => {
             </Tab.Screen>
 
 
-
+            <Tab.Screen
+                name="NoteScreen"
+                style={styles.tabScreen}
+                options={{
+                    /**
+                    * tabBarVisible + tabBarButton permettent de masquer
+                    l'icône de la tapBar.
+                    */
+                    tabBarVisible: false,
+                    tabBarButton: (props) => null,
+                    tabBarLabel: `Note`,
+                    tabBarActiveTintColor: "#917FB3",
+                    tabBarInactiveTintColor: "#E5BEEC",
+                    tabBarIcon: ({ color, size }) => (
+                        <FoundationIcons name="page-search" color={color}
+                            size={size} />
+                    ),
+                    title: `Note de ${userName || "Invité"}`,
+                }}
+            >
+                {(props) => <NoteScreen {...props} userName={userName}
+                />}
+                
+            </Tab.Screen>
         </Tab.Navigator>
+
+
     );
 }
 

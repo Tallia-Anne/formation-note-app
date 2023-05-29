@@ -6,7 +6,7 @@ export async function initProfileName(name = null) {
         const jsonValue = await AsyncStorage.getItem("@profile");
         // Verification: la clé profile est null
         if (jsonValue === null) {
-            // @profile permet de reperer le plus visiblement grace à @
+            // @profile permet de repérer le plus visiblement grâce à @
             await AsyncStorage.setItem("@profile",
                 // inscrement de la valeur de la clé profile
                 JSON.stringify(name !== null ? name :

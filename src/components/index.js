@@ -1,19 +1,18 @@
-// import Note from "./Note";
-// import NoteDetails from "./NoteDetails";
- import NoteInputModal from "./NoteInputModal";
-import NotFound from "./NotFound";
+
 import ReplacementView from "./ReplacementView";
 import RoundIconBtn from "./RoundIconBtn";
-// import SearchBar from "./SearchBar";
+import NoteInputModal from "./NoteInputModal";
+import NotFound from "./NotFound";
+import Note from "./Note";
+import SearchBar from "./SearchBar";
+import NoteDetails from "./NoteDetails";
 
-
-export {
-    // Note,
-    // NoteDetails,
-    NoteInputModal,
-    NotFound,    
+export {    
     ReplacementView,
     RoundIconBtn,
-    // SearchBar,
-    
+    NoteInputModal,
+    NotFound, 
+    Note,
+    SearchBar,
+    NoteDetails,     
 }
